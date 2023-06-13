@@ -6,77 +6,573 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Tailwind Script CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../../css/main.css" />
     <title>Beasiswa Plus</title>
   </head>
   <body>
-    <div class="max-w-[1280px] mx-auto">
-      <!-- HEADER -->
-      <header class="header-bg h-[853px] base-text">
-        <div class="absolute w-full">
-          <navbar class="flex gap-8 px-8 justify-between items-center">
-            <a href="" class="mr-16">
-              <img
-                src="../../assets/logo.png"
-                alt="logo"
-                class="w-[14rem] h-[7rem]"
-              />
+    <!-- HEADER -->
+    <header class="header-bg h-[453px] md:h-[853px] base-text">
+      <div class="absolute w-full">
+        <navbar class="hidden lg:flex gap-8 px-8 justify-between items-center">
+          <a href="" class="mr-16">
+            <img
+              src="../../assets/logo.png"
+              alt="logo"
+              class="w-[14rem] h-[7rem]"
+            />
+          </a>
+
+          <!-- NAV ITEM -->
+
+          <div class="flex gap-8 items-center mb-4">
+            <a href="">BERANDA</a>
+            <a href="">TENTANG</a>
+            <a href="">ARTIKEL</a>
+
+            <a
+              id="dropdownDefaultButton"
+              data-dropdown-toggle="dropdown"
+              class="flex items-center gap-2 hover:cursor-pointer"
+              type="button"
+            >
+              BEASISWA
+              <svg
+                class="w-4 h-4 ml-2"
+                aria-hidden="true"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
             </a>
-
-            <!-- NAV ITEM -->
-
-            <div class="flex gap-8 items-center mb-4">
-              <a href="">BERANDA</a>
-              <a href="">TENTANG</a>
-              <a href="">ARTIKEL</a>
-              <a href="">BEASISWA</a>
-              <a href="">FORUM</a>
-              <a href="">KIRIM TULISAN</a>
-              <a href="">MASUK</a>
+            <!-- Dropdown menu -->
+            <div
+              id="dropdown"
+              class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+            >
+              <ul
+                class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                aria-labelledby="dropdownDefaultButton"
+              >
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Dashboard</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Settings</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Earnings</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Sign out</a
+                  >
+                </li>
+              </ul>
             </div>
-          </navbar>
 
-          <!-- CONTENT -->
+            <a href="">FORUM</a>
+            <a href="">KIRIM TULISAN</a>
 
-          <div
-            class="text-white text-center max-w-[848px] mx-auto mt-20 flex flex-col justify-center items-center gap-6"
-          >
-            <h1 class="font-semibold text-title">
-              SELAMAT DATANG DI BEASISWAPLUS
-            </h1>
-            <p class="max-w-[700px] text-label">
-              Selamat datang di BeasiswaPlus,  penyedia informasi beasiswa
-              serta komunitas pencari beasiswa dalam mewadahi pelajar Indonesia
-              untuk mempersiapkan studi lanjut di dalam negeri. BeasiswaPlus
-              membantumu untuk menemukan beasiswa yang kamu inginkan.
-            </p>
+            <!-- MODAL MASUK -->
+            <button
+              data-modal-target="authentication-modal"
+              data-modal-toggle="authentication-modal"
+              type="button"
+            >
+              MASUK
+            </button>
+
+            <div
+              id="authentication-modal"
+              tabindex="-1"
+              aria-hidden="true"
+              class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full max-w-[518px] mx-auto"
+            >
+              <div class="relative w-full max-w-md max-h-full">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow">
+                  <button
+                    type="button"
+                    class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+                    data-modal-hide="authentication-modal"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                  </button>
+                  <div class="px-12 py-6">
+                    <h3 class="mb-4 modal-title text-gray-900">
+                      Masuk akun Beasiswa Plus
+                    </h3>
+                    <form class="space-y-4 mt-8" action="#">
+                      <input
+                        type="text"
+                        placeholder="Username"
+                        class="w-full modal-input"
+                        required
+                        autofocus
+                      />
+                      <input
+                        type="password"
+                        placeholder="Password"
+                        class="w-full modal-input"
+                        required
+                      />
+                    </form>
+                    <div class="flex justify-end py-2 modal-change-password">
+                      <a href="">Lupa Password</a>
+                    </div>
+
+                    <div class="mt-4 flex flex-col gap-4">
+                      <button
+                        class="px-4 py-2 text-black text-centr bg-[#F1F6F9] text-[#212A3E] w-full text-[18px] tracking-wider"
+                      >
+                        Masuk
+                      </button>
+                      <button
+                        class="px-4 py-2 text-black text-centr bg-white text-[#6B6B6B] w-full text-[18px] tracking-wider flex items-center gap-4 justify-center border-2"
+                      >
+                        <img
+                          src="../../assets/google-icon.png"
+                          class="w-[34px]"
+                          alt="google-icon"
+                        />Masuk dengan Google
+                      </button>
+                    </div>
+
+                    <div
+                      class="mt-6 text-center text-[#6B6B6B] mb-12 text-[13px]"
+                    >
+                      Belum punya akun ?
+                      <a
+                        class="text-[#FEB900] font-extrabold cursor-pointer"
+                        data-modal-target="authentication-modal-2"
+                        data-modal-toggle="authentication-modal-2"
+                        data-modal-hide="authentication-modal"
+                        >Daftar sekarang</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="authentication-modal-2"
+              tabindex="-1"
+              aria-hidden="true"
+              class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full max-w-[518px] mx-auto"
+            >
+              <div class="relative w-full max-w-md max-h-full">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow">
+                  <button
+                    type="button"
+                    class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+                    data-modal-hide="authentication-modal-2"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                  </button>
+                  <div class="px-12 py-6">
+                    <h3 class="mb-4 modal-title text-gray-900">
+                      Buat akun Beasiswa Plus
+                    </h3>
+                    <form class="space-y-4 mt-8" action="#">
+                      <input
+                        type="email"
+                        placeholder="Email"
+                        class="w-full modal-input"
+                        required
+                      />
+                      <input
+                        type="text"
+                        placeholder="Nama Lengkap"
+                        class="w-full modal-input"
+                        required
+                        autofocus
+                      />
+                      <input
+                        type="password"
+                        placeholder="Password"
+                        class="w-full modal-input"
+                        required
+                      />
+                    </form>
+                    <div class="flex justify-end py-2 modal-change-password">
+                      <a href="">Lupa Password</a>
+                    </div>
+
+                    <div class="mt-4 flex flex-col gap-4">
+                      <button
+                        class="px-4 py-2 text-black text-centr bg-[#F1F6F9] text-[#212A3E] w-full text-[18px] tracking-wider"
+                      >
+                        Daftar
+                      </button>
+                      <button
+                        class="px-4 py-2 text-black text-centr bg-white text-[#6B6B6B] w-full text-[18px] tracking-wider flex items-center gap-4 justify-center border-2"
+                      >
+                        <img
+                          src="../../assets/google-icon.png"
+                          class="w-[34px]"
+                          alt="google-icon"
+                        />Daftar dengan Google
+                      </button>
+                    </div>
+
+                    <div
+                      class="mt-6 text-center text-[#6B6B6B] mb-12 text-[13px]"
+                    >
+                      Sudah punya akun ?
+                      <a
+                        data-modal-target="authentication-modal"
+                        data-modal-toggle="authentication-modal"
+                        data-modal-hide="authentication-modal-2"
+                        class="text-[#FEB900] font-extrabold cursor-pointer"
+                        >MAsuk sekarang</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </header>
+        </navbar>
 
-      <!-- BEASISWA -->
+        <!-- CONTENT -->
+
+        <div
+          class="text-white text-center mx-auto mt-20 flex flex-col justify-center items-center gap-6"
+        >
+          <h1
+            class="font-semibold text-[24px] md:text-[40px] md:leading-[84px] tracking-wider max-w-[848px]"
+          >
+            SELAMAT DATANG DI BEASISWAPLUS
+          </h1>
+          <p class="max-w-[777px] text-[14px] md:text-[25px] md:leading-[35px]">
+            Selamat datang di BeasiswaPlus,penyedia informasi beasiswa serta
+            komunitas pencari beasiswa dalam mewadahi pelajar Indonesia untuk
+            mempersiapkan studi lanjut di dalam negeri. BeasiswaPlus membantumu
+            untuk menemukan beasiswa yang kamu inginkan.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <!-- BEASISWA -->
+    <div class="max-w-[1280px] mx-auto">
       <div>
         <h1 class="content-title text-center my-8 font-semibold">Beasiswa</h1>
+
         <!-- LIST CARD BEASISWA -->
-        <div class="px-12 py-4">
-          <div class="card flex items-start max-w-[550px] stroke-slate-500 w-full">
+        <div class="px-12 py-4 grid grid-cols-1 lg:grid-cols-2 gap-x-2 gap-y-6">
+          <!-- CARD -->
+
+          <div class="card flex items-start lg:max-w-[550px]">
             <figure>
-              <img src="./assets/card-image-1.png" alt="" />
+              <img src="./assets/card-image-1.png" alt="card-img-1" />
             </figure>
 
-            <div class="p-12 max-w-[254px]">
+            <div class="px-6 py-6">
               <h2 class="card-title font-semibold mb-4">Beasiswa Astra</h2>
-              <p class="card-content">
+              <p class="card-content lg:max-w-[300px]">
                 Program beasiswa ini disediakan oleh Astra International untuk
                 mahasiswa S1 yang berprestasi dan memiliki kebutuhan finansial.
               </p>
-              <button class="card-button px-4 py-2 mt-4">
-                Selengkapnya
-              </button>
+              <button class="card-button px-4 py-2 mt-4">Selengkapnya</button>
+            </div>
+          </div>
+
+          <div class="card flex items-start lg:max-w-[550px]">
+            <figure>
+              <img src="./assets/card-image-1.png" alt="card-img-1" />
+            </figure>
+
+            <div class="px-6 pt-6">
+              <h2 class="card-title font-semibold mb-4">Beasiswa Astra</h2>
+              <p class="card-content lg:max-w-[300px]">
+                Program beasiswa ini disediakan oleh Astra International untuk
+                mahasiswa S1 yang berprestasi dan memiliki kebutuhan finansial.
+              </p>
+              <button class="card-button px-4 py-2 mt-4">Selengkapnya</button>
+            </div>
+          </div>
+
+          <div class="card flex items-start lg:max-w-[550px]">
+            <figure>
+              <img src="./assets/card-image-1.png" alt="card-img-1" />
+            </figure>
+
+            <div class="px-6 pt-6">
+              <h2 class="card-title font-semibold mb-4">Beasiswa Astra</h2>
+              <p class="card-content lg:max-w-[300px]">
+                Program beasiswa ini disediakan oleh Astra International untuk
+                mahasiswa S1 yang berprestasi dan memiliki kebutuhan finansial.
+              </p>
+              <button class="card-button px-4 py-2 mt-4">Selengkapnya</button>
+            </div>
+          </div>
+
+          <div class="card flex items-start lg:max-w-[550px]">
+            <figure>
+              <img src="./assets/card-image-1.png" alt="card-img-1" />
+            </figure>
+
+            <div class="px-6 pt-6">
+              <h2 class="card-title font-semibold mb-4">Beasiswa Astra</h2>
+              <p class="card-content lg:max-w-[300px]">
+                Program beasiswa ini disediakan oleh Astra International untuk
+                mahasiswa S1 yang berprestasi dan memiliki kebutuhan finansial.
+              </p>
+              <button class="card-button px-4 py-2 mt-4">Selengkapnya</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- BULLET PAGINATION -->
+        <div class="flex items-center justify-center gap-2 p-8">
+          <div class="rounded-full bg-gray-300 w-4 h-4"></div>
+          <div class="rounded-full bg-gray-300 w-4 h-4"></div>
+          <div class="rounded-full bg-gray-300 w-4 h-4"></div>
+          <div class="rounded-full bg-gray-300 w-4 h-4"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MANFAAT -->
+    <div class="bg-[#FBF9F9] w-full mt-8">
+      <div class="max-w-[1290px] mx-auto">
+        <div class="flex items-start md:px-24 md:py-20">
+          <img
+            src="./assets/manfaat-image.png"
+            alt="manfaat-img"
+            class="hidden lg:block"
+          />
+          <div class="flex flex-col px-10 py-4">
+            <div class="flex flex-col gap-1">
+              <h1
+                class="text-[47px] font-semibold text-[#6D6D6F] leading-[64px] max-w-[632px] tracking-widest"
+              >
+                Manfaat Gabung Beasiswa Plus
+              </h1>
+              <div class="bg-[#394867] w-[100px] rounded h-1"></div>
+            </div>
+            <div class="flex flex-col gap-4 mt-12">
+              <div class="flex gap-2 item-center justify-start">
+                <div
+                  class="w-[24px] h-[24px] bg-[#FEB900] p-2 text-white text-center flex items-center"
+                >
+                  1
+                </div>
+                <p
+                  class="text-[19px] leading-[27px] tracking-wider text-[#4D4D65]"
+                >
+                  Para calon penerima beasiswa dapat dengan mudah menemukan
+                  informasi terkini tentang beasiswa yang tersedia di berbagai
+                  institusi pendidikan perusahaan, dan organisasi.
+                </p>
+              </div>
+              <div class="flex gap-2 item-center justify-start">
+                <div
+                  class="w-[24px] h-[24px] bg-[#FEB900] p-2 text-white text-center flex items-center"
+                >
+                  2
+                </div>
+                <p
+                  class="text-[19px] leading-[27px] tracking-wider text-[#4D4D65]"
+                >
+                  Informasi beasiswa yang disediakan secara online dapat diakses
+                  oleh siapa saja, di mana saja, dan kapan saja.
+                </p>
+              </div>
+              <div class="flex gap-2 item-center justify-start">
+                <div
+                  class="w-[24px] h-[24px] bg-[#FEB900] p-2 text-white text-center flex items-center"
+                >
+                  3
+                </div>
+                <p
+                  class="text-[19px] leading-[27px] tracking-wider text-[#4D4D65]"
+                >
+                  Memberikan kesempatan bagi para calon penerima beasiswa untuk
+                  terhubung dengan komunitas yang sama.
+                </p>
+              </div>
+              <div class="flex gap-2 item-center justify-start">
+                <div
+                  class="w-[24px] h-[24px] bg-[#FEB900] p-2 text-white text-center flex items-center"
+                >
+                  4
+                </div>
+                <p
+                  class="text-[19px] leading-[27px] tracking-wider text-[#4D4D65]"
+                >
+                  para calon penerima beasiswa dapat menghemat waktu dan upaya
+                  dalam mencari beasiswa yang cocok dan mempersiapkan aplikasi
+                  mereka.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Artikel -->
+    <div class="max-w-[1290px] mx-auto my-12">
+      <div class="flex gap-2 min-[450px]:gap-8 justify-center items-center">
+        <div class="bg-[#394867] w-[50px] md:w-[100px] rounded h-1"></div>
+        <h1
+          class="font-semibold text-[18px] min-[450px]:text-[25px] text-center uppercase tracking-wider"
+        >
+          Artikel Terbaru
+        </h1>
+        <div class="bg-[#394867] w-[50px] md:w-[100px] rounded h-1"></div>
+      </div>
+
+      <div
+        class="flex flex-col flex-wrap gap-6 sm:flex-row items-center justify-center mt-8 p-4 md:p-0"
+      >
+        <div class="flex flex-col gap-2 sm:max-w-[343px]">
+          <div class="relative">
+            <img src="./assets/artikel-1.png" alt="artikel-1" class="w-full" />
+            <div class="absolute bottom-0 right-0 bg-[#FBC355] text-white p-2">
+              <span class="text-[17px] font-semibold">2 Agustus</span>
+            </div>
+          </div>
+          <h3 class="text-[20px] font-semibold leading-[35px]">
+            Cara Mudah Diterima Beasiswa Tingkat S1
+          </h3>
+
+          <div class="flex items-center gap-6">
+            <div class="flex item-center gap-2">
+              <img src="../../assets/icon-user.png" alt="icon-user" />
+              <p class="text-[#7E7E7E] text-[15px]">Hani Nurisa</p>
+            </div>
+            <p class="text-[#7E7E7E] text-[15px]">/</p>
+            <div class="flex item-center gap-2">
+              <img src="../../assets/icon-follder.png" alt="icon-folder" />
+              <p class="text-[#7E7E7E] text-[15px]">Tips</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-2 sm:max-w-[343px]">
+          <div class="relative">
+            <img src="./assets/artikel-1.png" alt="artikel-1" class="w-full" />
+            <div class="absolute bottom-0 right-0 bg-[#FBC355] text-white p-2">
+              <span class="text-[17px] font-semibold">2 Agustus</span>
+            </div>
+          </div>
+          <h3 class="text-[20px] font-semibold leading-[35px]">
+            Cara Mudah Diterima Beasiswa Tingkat S1
+          </h3>
+
+          <div class="flex items-center gap-6">
+            <div class="flex item-center gap-2">
+              <img src="../../assets/icon-user.png" alt="icon-user" />
+              <p class="text-[#7E7E7E] text-[15px]">Hani Nurisa</p>
+            </div>
+            <p class="text-[#7E7E7E] text-[15px]">/</p>
+            <div class="flex item-center gap-2">
+              <img src="../../assets/icon-follder.png" alt="icon-folder" />
+              <p class="text-[#7E7E7E] text-[15px]">Tips</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-2 sm:max-w-[343px]">
+          <div class="relative">
+            <img src="./assets/artikel-1.png" alt="artikel-1" class="w-full" />
+            <div class="absolute bottom-0 right-0 bg-[#FBC355] text-white p-2">
+              <span class="text-[17px] font-semibold">2 Agustus</span>
+            </div>
+          </div>
+          <h3 class="text-[20px] font-semibold leading-[35px]">
+            Cara Mudah Diterima Beasiswa Tingkat S1
+          </h3>
+
+          <div class="flex items-center gap-6">
+            <div class="flex item-center gap-2">
+              <img src="../../assets/icon-user.png" alt="icon-user" />
+              <p class="text-[#7E7E7E] text-[15px]">Hani Nurisa</p>
+            </div>
+            <p class="text-[#7E7E7E] text-[15px]">/</p>
+            <div class="flex item-center gap-2">
+              <img src="../../assets/icon-follder.png" alt="icon-folder" />
+              <p class="text-[#7E7E7E] text-[15px]">Tips</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer w-full h-[444px]">
+      <div class="text-white absolute w-full">
+        <div class="pl-8 py-20">
+          <p class="max-w-[247px] font-semibold leading-[18px] text-[16px]">
+            JALAN KARANG MENJANGAN NO. 96, MOJO, SURABAYA, JAWA TIMUR 60285
+          </p>
+
+          <div
+            class="mt-6 max-w-[247px] font-semibold leading-[18px] text-[16px]"
+          >
+            <p>TELP : +6285700011110</p>
+            <p>EMAIL : BEASISWAPLUS.CO.ID</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
   </body>
 </html>
