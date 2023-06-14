@@ -21,6 +21,7 @@
   width: 100%;
   height: 100%;
 }
+
 .base-text {
   color: #b7b7b7;
 }
@@ -105,6 +106,16 @@
   position: absolute;
   background-color: #3959C8;
   opacity: 0.6;
+  width: 100%;
+  height: 100%;
+}
+
+.footer-bg::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #000000;
+  opacity: 0.3;
   width: 100%;
   height: 100%;
 }
